@@ -1,0 +1,30 @@
+/* Font Familys
+font-family: 'Yanone Kaffeesatz', sans-serif;
+font-family: 'Source Sans Pro', sans-serif;
+*/
+body {
+  background-color: black;
+  color: white;
+}
+.ju-inital {
+  margin: 10% 20%;
+}
+.jumbotron-jumbotron-fluid {
+  padding-bottom: 0;
+  padding-top: 5vh;
+  margin-bottom: 0;
+  height: 30vh;
+}
+.col-3 {
+  background-color: black;
+  height: 60vh;
+}
+.col-9 {
+  background-color: blanchedalmond;
+  height: 60vh;
+}
+
+.nav-item {
+  padding-left: 23%;
+  padding-top: 10;
+}
