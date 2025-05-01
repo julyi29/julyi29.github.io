@@ -11,12 +11,6 @@
       content="Hier ist der Ort wo ich meine persönliche Reise zur Front-End Entwicklung und Design-Stduies veröffentlichen werde."
     />
     <!-- Style-Sheets und Fonts -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
-      crossorigin="anonymous"
-    />
     <link rel="stylesheet" href="main.css" />
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@400;700&display=swap");
@@ -25,34 +19,45 @@
     <!-- Import Ende -->
     <title>Portfolio</title>
   </head>
+
   <body>
-    <div class="jumbotron-jumbotron-fluid">
-      <div class="container">
-        <h1 class="display-4">Hello World, (ʘ‿ʘ)╯</h1>
-        <p class="lead">
+      <div class="sidebar">
+        <nav class="sidebar-nav wrapper">
+        <ul>
+          <li>
+            <a href="index.html">Home</a>
+          </li>
+          <li>
+            <a href="projects.html">Projects</a>
+          </li>
+          <li>
+            <a href="about.html">About</a>
+          </li>
+          <li>
+            <a href="contact.html">Contact</a>
+          </li>
+          <li>
+            <p>dark mode</p>
+          </li>
+        </ul>
+      </nav>
+
+
+    <main class="main-content wrapper">
+        <h1>Hello World, (ʘ‿ʘ)╯</h1>
+        <p>
           These are my first baby steps in the world wide web. <br> 
           I am currently attending the Harvard CS50 courses and this is my playground.
         </p>
-      </div>
-    </div>
-    <div class="ju-inital">
+
+      <div class="ju-initial">
       <svg
-        width="20%"
-        height="20%"
-        viewBox="0 0 381 466"
-        version="1.1"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
-        xml:space="preserve"
-        xmlns:serif="http://www.serif.com/"
-        style="
-          fill-rule: evenodd;
-          clip-rule: evenodd;
-          stroke-linejoin: round;
-          stroke-miterlimit: 2;
-          fill: aliceblue;
-        "
-      >
+      class="ju-initial-svg"
+      viewBox="0 0 381 466"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlns:serif="http://www.serif.com/"
+      xml:space="preserve">
         <g transform="matrix(1,0,0,1,-31.6735,-57.9578)">
           <g id="Initial" transform="matrix(0.7939,0,0,0.7939,47.8222,60.4343)">
             <path
@@ -61,6 +66,16 @@
           </g>
         </g>
       </svg>
+      </div>
+
+
+  </main>
+</div>
+</body>
+
+  <footer>
+    <div class="wrapper">
+      <p>nice to have you here :) </p>
     </div>
-  </body>
+  </footer>
 </html>

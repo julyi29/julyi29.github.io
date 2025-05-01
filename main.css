@@ -1,30 +1,138 @@
-/* Font Familys
-font-family: 'Yanone Kaffeesatz', sans-serif;
-font-family: 'Source Sans Pro', sans-serif;
-*/
-body {
-  background-color: black;
-  color: white;
-}
-.ju-inital {
-  margin: 10% 20%;
-}
-.jumbotron-jumbotron-fluid {
-  padding-bottom: 0;
-  padding-top: 5vh;
-  margin-bottom: 0;
-  height: 30vh;
-}
-.col-3 {
-  background-color: black;
-  height: 60vh;
-}
-.col-9 {
-  background-color: blanchedalmond;
-  height: 60vh;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.nav-item {
-  padding-left: 23%;
-  padding-top: 10;
+/* CSS Variables */
+:root {
+  /* Light Mode Colors */
+  --background-color: #FFFFFF  ;
+  --background-color-alt: #F5F5F5;
+  --background-color-input: #FFFFFF;
+  --accent-color: #F4B400;
+  --text-color: #1A1A1A;
+  --text-color-alt: #333333;
+  --text-color-muted: #777777;
+
+  /* UI Colors (Same for both modes) */
+  --error-color: #D93025;
+  --success-color: #188038;
+  --warning-color: #E37400;
+
+  /* Base UI Font */
+  --font-body: "Open Sans", sans-serif;
+  --font-body-line-height: 1.6;
+  --font-body-size: clamp(0.95rem, 0.8rem + 0.5vw, 1.125rem);
+  --font-body-weight: 400;
+  --font-body-style: normal;
+  --font-body-optical-sizing: auto;
+  --font-body-variation: "wdth" 100;
+
+  /* Headings */
+  --font-h1-size: clamp(2.5rem, 1rem + 5vw, 4rem);
+  --font-h1-spacing: -1px;
+  --font-h1-weight: 800;
+
+  --font-h2-size: clamp(1.5rem, 0.5rem + 3vw, 2rem);
+  --font-h2-spacing: -0.25px;
+  --font-h2-weight: 600;
+
+  --font-h3-size: clamp(1.25rem, 0.5rem + 2vw, 1.75rem);
+  --font-h3-spacing: 0;
+  --font-h3-weight: 600;
+
+  --font-h4-size: clamp(1rem, 0.3rem + 2vw, 1.5rem);
+  --font-h4-spacing: 0.25px;
+  --font-h4-weight: 500;
+
+  /* Links */
+  --font-link-decoration: underline;
+  --font-link-hover-decoration: none;
+  --font-link-weight: 600;
+
+  /* Emphasis */
+  --font-emphasis-style: italic;
+  --font-emphasis-weight: 600;
+
+  /* Strong */
+  --font-strong-weight: 700;
+
+  /* Small Text */
+  --font-small-size: clamp(0.75rem, 0.6rem + 0.2vw, 0.875rem);
+  --font-small-weight: 400;
+
+  /* Layout */
+  --layout-max-width: clamp(60rem, 80vw, 75rem); /* 960px to 1200px */
+  --layout-padding: clamp(1rem, 2vw, 2rem);
+  --layout-gap: clamp(0.5rem, 1vw, 1.5rem);
+  --layout-breakpoint-sm: 480px;
+  --layout-breakpoint-md: 768px;
+  --layout-breakpoint-lg: 1024px;
+
+  /* Buttons & UI */
+  --button-radius: clamp(0.5rem, 1vw, 1rem);
+}
+
+/* Dark Mode */
+.dark-mode {
+  --background-color: #121212;
+  --background-color-alt: #1E1E1E;
+  --background-color-input:#1A1A1A;  
+  --accent-color: #F4B400;
+  --text-color: #F5F5F5;
+  --text-color-alt: #CCCCCC;
+  --text-color-muted: #888888;
+
+  --error-color: #F28B82;
+  --success-color: #81C995;
+  --warning-color: #FDD663;
+
+}
+
+/* Layout */
+.wrapper {
+  max-width: var(--layout-max-width);
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: var(--layout-padding);
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.sidebar {
+  display: grid;
+  grid-template-columns: fit-content(20ch) minmax(min(50vw, 30ch), 1fr);
+  gap: var(--layout-gap);
+}
+
+.sidebar-nav {
+  background-color: var(--background-color-alt);
+  padding: var(--layout-padding);
+}
+
+.main-content {
+  background-color: var(--background-color);
+  padding: var(--layout-padding);
+}
+
+footer {
+  background-color: var(--background-color-alt);
+  padding: var(--layout-padding);
+  text-align: center;
+}
+
+.ju-initial {
+  display: flex;
+  justify-content: center;
+  padding: 10rem auto;
+}
+
+.ju-initial-svg {
+  fill: var(--accent-color);
+  width: clamp(80px, 20vw, 200px);
+  height: clamp(80px, 20vw, 200px);
 }
