@@ -36,8 +36,8 @@
 
   --button-radius: clamp(0.5rem, 1vw, 1rem);
 
-  --nav-width: 250px;
-  --header-height: 60px;
+  --nav-width: clamp(7rem, 12%, 16rem);
+  --header-height: clamp(5rem, 4vw + 1rem, 8rem);
   --footer-height: 50px;
 }
 
@@ -83,6 +83,7 @@ a {
 /* Layout */
 .site-header {
   grid-area: header;
+  height: var(--header-height);
   background-color: var(--background-color-alt);
   padding: var(--layout-padding);
   display: flex;
@@ -104,17 +105,22 @@ a {
   grid-area: nav;
   background-color: var(--background-color-alt);
   padding: var(--layout-padding);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
  }
 
  .site-nav ul {
   list-style: none;
   display: flex;
   flex-direction: column;
+  gap: var(--layout-gap);
  }
 
  .site-nav a {
   text-decoration: none;
-  color: var(--text-color);
+  padding: var(--layout-padding);
  }
 
  .site-main {
@@ -129,6 +135,8 @@ a {
 
  .site-footer {
   grid-area: footer;
+  display: flex;
+  justify-content: center;
   background-color: var(--background-color-alt);
   padding: var(--layout-padding);
   text-align: center;
@@ -172,4 +180,15 @@ a {
   .site-nav.open {
     display: block;
   }
+ }
+
+ .ju-initial {
+  display: flex;
+  width: clamp(4rem, 3vw + 1rem, 6rem);
+  height: clamp(4rem, 3vw + 1rem, 6rem);
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  color: var(--background-color);
+  margin: 3rem auto;
+  justify-content: center;
  }
