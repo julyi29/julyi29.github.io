@@ -35,6 +35,10 @@
   --layout-breakpoint-lg: 1024px;
 
   --button-radius: clamp(0.5rem, 1vw, 1rem);
+
+  --nav-width: 250px;
+  --header-height: 60px;
+  --footer-height: 50px;
 }
 
 /* Dark Mode */
@@ -56,7 +60,10 @@ body {
   background-color: var(--background-color);
   color: var(--text-color);
   min-height: 100vh;
-  display: flex;
+  display: grid;
+  grid-template-rows: var(--header-height) 1fr var(--footer-height);
+  grid-template-columns: var(--nav-width) 1fr;
+  grid-template-areas: "nav header" "nav main" "nav footer";
 }
 
 h1 {
@@ -74,143 +81,95 @@ a {
 }
 
 /* Layout */
-.layout {
-  display: flex;
-  width: 100%;
-}
-
-/* Sidebar trigger (mobile) */
-.sidebar-trigger {
-  z-index: 10;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 4em;
-  width: 100%;
+.site-header {
+  grid-area: header;
   background-color: var(--background-color-alt);
+  padding: var(--layout-padding);
   display: flex;
   align-items: center;
-  padding-left: 1.5em;
+}
+
+.site-title {
+  font-size: var(--font-h1-size);
+  font-weight: var(--font-h1-weight);
+  color: var(--text-color);
+}
+
+.menu-toggle {
+  display: none;
   cursor: pointer;
 }
 
-.sidebar-trigger i {
-  color: var(--accent-color);
-  font-size: 1.25rem;
-}
-
-/* Sidebar Nav */
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: -15em;
-  width: 15em;
-  height: 100%;
-  background-color: #243e56;
-  color: rgba(255, 255, 255, 0.8);
-  transition: all 0.3s ease-in;
-  overflow: hidden;
-  padding-top: 4em;
-  z-index: 5;
-}
-
-.sidebar:hover,
-.sidebar:focus,
-.sidebar-trigger:hover + .sidebar,
-.sidebar-trigger:focus + .sidebar {
-  left: 0;
-}
-
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.sidebar li {
-  width: 100%;
-}
-
-.sidebar a {
-  display: flex;
-  align-items: center;
-  height: 4em;
-  padding-left: 1em;
-  color: inherit;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.sidebar a:hover {
-  background-color: #4d6276;
-}
-
-/* Sidebar icons */
-.sidebar a i {
-  width: 4em;
-  text-align: center;
-}
-
-/* Main Content */
-.main-content {
-  flex: 1;
-  margin-left: 0;
+ .site-nav {
+  grid-area: nav;
+  background-color: var(--background-color-alt);
   padding: var(--layout-padding);
-  background-color: var(--background-color);
-  transition: margin-left 0.3s ease-in-out;
+ }
+
+ .site-nav ul {
+  list-style: none;
   display: flex;
-  justify-content: center;
-  align-items: center;
-}
+  flex-direction: column;
+ }
 
-/* Responsive Enhancements */
-@media (min-width: 672px) {
-  .sidebar {
-    width: 4em;
-    left: 0;
+ .site-nav a {
+  text-decoration: none;
+  color: var(--text-color);
+ }
+
+ .site-main {
+  grid-area: main;
+  padding: var(--layout-padding);
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--layout-gap);
+ }
+
+ .site-footer {
+  grid-area: footer;
+  background-color: var(--background-color-alt);
+  padding: var(--layout-padding);
+  text-align: center;
+  color: var(--text-color-muted);
+ }
+
+ @media (min-width: var(--layout-breakpoint-md)){
+  body {
+    grid-template-areas: "nav header" "nav main" "nav footer";
+    grid-template-columns: var(--nav-width) 1fr;
   }
 
-  .sidebar:hover {
-    width: 15em;
+  .site-header {
+    justify-content: flex-end;
   }
 
-  .sidebar a span {
+  .menu-toggle {
     display: none;
   }
 
-  .sidebar:hover a span {
-    display: inline;
-    margin-left: 1em;
+  .site-nav {
+    position: sticky;
+    top: 0;
+    height: 100vh;
   }
 
-  .main-content {
-    margin-left: 4em;
+  .site-nav ul {
+    flex-direction: column;
+  }
+ }
+/* Mobile menu toggle */
+ @media (max-width: var(--layout-breakpoint-md)){
+  .menu-toggle {
+    display: block;
   }
 
-  .sidebar:hover ~ .main-content {
-    margin-left: 15em;
-  }
-
-  .sidebar-trigger {
-    width: 4em;
-  }
-}
-
-@media (min-width: 1088px) {
-  .sidebar {
-    width: 15em;
-  }
-
-  .sidebar a span {
-    display: inline;
-    margin-left: 1em;
-  }
-
-  .main-content {
-    margin-left: 15em;
-  }
-
-  .sidebar-trigger {
+  .site-nav {
     display: none;
   }
-}
+
+  .site-nav.open {
+    display: block;
+  }
+ }
