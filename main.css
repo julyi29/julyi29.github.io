@@ -7,12 +7,12 @@
 
 /* CSS Variables */
 :root {
-  --background-color: #FFFFFF;
-  --background-color-alt: #F5F5F5;
+  --background-color: #FAF9F7;
+  --background-color-alt: #F5F3EF;
   --background-color-input: #FFFFFF;
-  --accent-color: #F4B400;
-  --text-color: #1A1A1A;
-  --text-color-alt: #333333;
+  --accent-color: #F97316;
+  --text-color: #2E2E2E;
+  --text-color-alt: #7A7167;
   --text-color-muted: #777777;
 
   --error-color: #D93025;
@@ -85,12 +85,13 @@ h1 {
   grid-area: site-header-logo;
   display: flex;
   align-items: center;
+  border-bottom: 1px solid var(--text-color-alt);
 }
 
 .ju-initial {
   display: flex;
-  width: clamp(3rem, 2vw + 1rem, 6rem);
-  height: clamp(3rem, 2vw + 1rem, 6rem);
+  width: clamp(3rem, 3vw + 1rem, 6rem);
+  height: clamp(3rem, 3vw + 1rem, 6rem);
   border-radius: 50%;
   background-color: var(--accent-color);
   color: var(--background-color);
@@ -102,24 +103,22 @@ h1 {
   grid-area: site-header-tag;
   display: flex;
   align-items: center;
+  border-left: 1px solid var(--text-color-alt);
+  border-right: 1px solid var(--text-color-alt);
+  padding-inline: 1rem;
 }
 .site-header-byline {
   grid-area: site-header-byline;
   display: flex;
   align-items: center;
+  justify-self: end;
 }
+
 .site-nav-list {
   grid-area: site-nav-list;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-}
-
-.site-nav-controls {
-  grid-area: site-nav-controls;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
 }
 
 .site-nav-list ul {
@@ -141,8 +140,26 @@ h1 {
   font-weight: var(--font-body-weight);
 }
 
+.site-nav-controls {
+  grid-area: site-nav-controls;
+  display: flex;
+  align-items: center;
+  justify-self: end;
+}
+
+.site-nav-controls ul {
+  display: flex;
+  gap: var(--layout-gap);
+  justify-content: flex-end;
+  list-style-type: none;
+}
+
 main {
   margin-top: var(--layout-gap);
+}
+
+section {
+  margin-block: calc(3* var(--layout-gap));
 }
 
 .site-footer {
