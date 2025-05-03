@@ -184,6 +184,75 @@ section {
   padding: var(--layout-padding);
 }
 
+/* UI Elements */
+.toggle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.dark-mode-toggle {
+  display: none;
+}
+
+.toggle-label {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  width: 4rem;
+  height: 2rem;
+  background-color: #ccc;
+  border-radius: 2rem;
+  transition: background-color 0.3s;
+}
+
+.toggle-label::before {
+  content: "";
+  position: absolute;
+  top: 0.25rem;
+  left: 0.25rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+.moon, .sun {
+  position: absolute;
+  font-size: 1.2rem;
+  transition: opacity 0.3s;
+}
+
+.moon {
+  left: 0.5rem;
+  opacity: 1;
+}
+
+.sun {
+  right: 0.5rem;
+  opacity: 0;
+}
+
+/* When checkbox is checked (dark mode) */
+.dark-mode-toggle:checked + .toggle-label {
+  background-color: #333;
+}
+
+.dark-mode-toggle:checked + .toggle-label::before {
+  transform: translateX(2rem);
+}
+
+.dark-mode-toggle:checked + .toggle-label .moon {
+  opacity: 0;
+}
+
+.dark-mode-toggle:checked + .toggle-label .sun {
+  opacity: 1;
+}
+
 /* Media Queries */
 /* Desktop */
 @media (min-width: 64rem) {

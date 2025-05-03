@@ -6,3 +6,9 @@ function updateCopyrightYear() {
   
   // Call the function to update the year on page load
   updateCopyrightYear();
+
+  const toggle = document.getElementById('darkModeToggle');
+
+toggle.addEventListener('change', () => {
+    document.body.classList.toggle('dark-mode', toggle.checked);
+});
