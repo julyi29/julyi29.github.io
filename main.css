@@ -7,13 +7,13 @@
 
 /* CSS Variables */
 :root {
-  --background-color: #FAF9F7;
-  --background-color-alt: #F5F3EF;
-  --background-color-input: #FFFFFF;
+  --background-color: hsl(35, 15%, 100%);
+  --background-color-alt: hsl(35, 15%, 95%);
+  --background-color-input: hsl(35, 10%, 100%);
   --accent-color: #F97316;
-  --text-color: #2E2E2E;
-  --text-color-alt: #7A7167;
-  --text-color-muted: #777777;
+  --text-color: hsl(35, 15%, 10%);
+  --text-color-alt: hsl(35, 15%, 20%);
+  --text-color-muted: hsl(35, 15%, 40%);
 
   --error-color: #D93025;
   --success-color: #188038;
@@ -39,12 +39,12 @@
 
 /* Dark Mode */
 .dark-mode {
-  --background-color: #121212;
-  --background-color-alt: #1E1E1E;
-  --background-color-input: #1A1A1A;
-  --text-color: #F5F5F5;
-  --text-color-alt: #CCCCCC;
-  --text-color-muted: #888888;
+  --background-color: hsl(35, 15%, 10%);
+  --background-color-alt: hsl(35, 15%, 15%);
+  --background-color-input: hsl(35, 10%, 5%);
+  --text-color: hsl(35, 15%, 100%);
+  --text-color-alt: hsl(35, 15%, 90%);
+  --text-color-muted: hsl(35, 15%, 60%);
 }
 
 /* Base Typography */
