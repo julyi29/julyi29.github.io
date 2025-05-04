@@ -201,6 +201,14 @@ a {
   font-family: var(--font-body-italic);
 }
 
+a:hover {
+  text-decoration-color: var(--accent-color);
+}
+
+a:active {
+  color: var(--text-color-muted);
+}
+
 em, i {
   font-family: var(--font-body-italic);
 }
@@ -212,6 +220,13 @@ strong, b {
 small {
   font-size: calc(var(--font-size) * 0.8);
   font-weight: 300;
+}
+
+.site-nav-list ul li a {
+  display: block;
+  font-size: calc(var(--font-size) * 1.2);
+  padding: var(--layout-padding);
+  font-weight: 500;
 }
 
 
@@ -302,13 +317,6 @@ body {
 
 .site-nav-list ul li {
   display: block;
-}
-
-.site-nav-list ul li a {
-  display: block;
-  padding: var(--layout-padding);
-  color: var(--text-color);
-  font-weight: var(--font-body-weight);
 }
 
 .site-nav-controls {
