@@ -353,8 +353,8 @@ section {
 
 .icon {
   color: var(--text-color);
-  width: var(--font-body-size);
-  height: var(--font-body-size);
+  width: var(--font-size);
+  height: var(--font-size);
   display: inline-block;
 }
 
