@@ -88,13 +88,13 @@ textarea:not([rows]) {
   --success-color: #188038;
   --warning-color: #E37400;
 
-  --font-body: "Open Sans", sans-serif;
-  --font-body-line-height: 1.6;
-  --font-body-size: clamp(0.95rem, 0.8rem + 0.5vw, 1.125rem);
-  --font-body-weight: 400;
+  --font-heading: "Merriweather", Georgia, serif;
+  --font-heading-italic: "MerriweatherItalic", Georgia, serif;
+  --font-body: "NotoSans", Arial, sans-serif;
+  --font-body-italic: "NotoSansItalic", Arial, sans-serif;
+  --font-size: clamp(0.875rem, 2vw + 1rem, 1.25rem);
+  --line-height: clamp(1.4, 2.5vw + 1.5, 1.8);
 
-  --font-h1-size: clamp(2.5rem, 1rem + 5vw, 4rem);
-  --font-h1-weight: 800;
 
   --layout-max-width: clamp(60rem, 80vw, 75rem);
   --layout-padding: clamp(1rem, 2vw, 2rem);
@@ -117,19 +117,103 @@ textarea:not([rows]) {
 }
 
 /* Base Typography */
+@font-face {
+  font-family: 'Merriweather';
+  src: url('/assets/fonts/Merriweather-VariableFont_opsz,wdth,wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-variation-settings: "opsz" 12, "wdth" 100, "wght" 400;
+}
+
+@font-face {
+  font-family: 'MerriweatherItalic';
+  src: url('/assets/fonts/Merriweather-Italic-VariableFont_opsz,wdth,wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+  font-variation-settings: "opsz" 12, "wdth" 100, "wght" 400;
+}
+
+@font-face {
+  font-family: 'NotoSans';
+  src: url('/assets/fonts/NotoSans-VariableFont_wdth,wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-variation-settings: "wdth" 100, "wght" 400;
+}
+
+@font-face {
+  font-family: 'NotoSansItalic';
+  src: url('/assets/fonts/NotoSans-Italic-VariableFont_wdth,wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+  font-variation-settings: "wdth" 100, "wght" 400;
+}
+
 body {
   font-family: var(--font-body);
-  font-size: var(--font-body-size);
-  line-height: var(--font-body-line-height);
-  font-weight: var(--font-body-weight);
-  background-color: var(--background-color);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  font-weight: 400;
   color: var(--text-color);
+  background-color: var(--background-color);
 }
 
 h1 {
-  font-size: var(--font-h1-size);
-  font-weight: var(--font-h1-weight);
+  font-family: var(--font-heading);
+  font-size: calc(var(--font-size) * 2.666);
+  line-height: calc(var(--line-hight) * 1.2);
+  font-weight: 900;
 }
+
+h2 {
+  font-family: var(--font-heading);
+  font-size: calc(var(--font-size) * 2);
+  line-height: calc(var(--line-height) * 1.15);
+  font-weight: 800;
+}
+
+h3 {
+  font-family: var(--font-heading);
+  font-size: calc(var(--font-size) * 1.5);
+  line-height: calc(var(--line-height) * 1.1);
+  font-weight: 700;
+}
+
+h4 {
+  font-family: var(--font-heading);
+  font-size: calc(var(--font-size) * 1.25);
+  line-height: calc(var(--line-height) * 1.05);
+  font-weight: 600;
+}
+
+p {
+  font-family: var(--font-body);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+}
+
+blockquote {
+  font-family: var(--font-body-italic);
+  line-height: calc(var(--line-height) * 0.9);
+}
+
+a {
+  font-family: var(--font-body-italic);
+}
+
+em, i {
+  font-family: var(--font-body-italic);
+}
+
+strong, b {
+  font-weight: 700;
+}
+
+small {
+  font-size: calc(var(--font-size) * 0.8);
+  font-weight: 300;
+}
+
 
 /* Layout */
 html, body {
