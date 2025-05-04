@@ -73,8 +73,7 @@ textarea:not([rows]) {
   scroll-margin-block: 5ex;
 }
 
-
-
+/*Composition */
 /* CSS Variables */
 :root {
   --background-color: hsl(35, 15%, 100%);
@@ -248,7 +247,14 @@ main {
 }
 
 section {
-  margin-block: calc(3* var(--layout-gap));
+  margin-block: calc(10 * var(--layout-gap));
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
 }
 
 .site-footer {
@@ -259,7 +265,8 @@ section {
   padding: var(--layout-padding);
 }
 
-/* UI Elements */
+/* Utility */
+
 .icon {
   color: var(--text-color);
   width: var(--font-body-size);
@@ -291,8 +298,6 @@ section {
   transition: background-color 0.3s ease-in-out;
   overflow: hidden;
 }
-
-
 
 .toggle-icon {
   position: absolute;
@@ -337,6 +342,30 @@ section {
   opacity: 1;
 }
 
+/*Block*/
+.card {
+  background-color: var(--background-color-alt);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.card a {
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+
+/* Exceptions */
 /* Media Queries */
 /* Desktop */
 @media (min-width: 64rem) {
