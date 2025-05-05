@@ -266,7 +266,7 @@ body {
   grid-area: site-header-logo;
   display: flex;
   align-items: center;
-  width: minmax(100px, 20hw);
+  width: minmax(100px, 20vw);
 }
 
 .ju-initial {
