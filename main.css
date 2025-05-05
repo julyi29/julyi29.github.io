@@ -495,3 +495,7 @@ section {
     justify-self: end;
   }
 }
+
+* {
+  outline: red solid 1px;
+}
