@@ -14,7 +14,7 @@ html {
 }
 
 /* Remove default margin in favour of better control in authored CSS */
-body, h1, h2, h3, h4, p,
+body, h1, h2, h3, h4, h5, h6, p,
 figure, blockquote, dl, dd {
   margin-block-end: 0;
 }
@@ -32,7 +32,7 @@ body {
 }
 
 /* Set shorter line heights on headings and interactive elements */
-h1, h2, h3, h4,
+h1, h2, h3, h4, h5, h6,
 button, input, label {
   line-height: 1.1;
 }
@@ -92,8 +92,17 @@ textarea:not([rows]) {
   --font-heading-italic: "MerriweatherItalic", Georgia, serif;
   --font-body: "NotoSans", Arial, sans-serif;
   --font-body-italic: "NotoSansItalic", Arial, sans-serif;
-  --font-size: clamp(0.875rem, 2vw + 1rem, 1.25rem);
-  --line-height: clamp(1.4, 2.5vw + 1.5, 1.8);
+
+  --font-size-sm: clamp(0.64rem, 0.9vw, 0.8rem);    
+  --font-size-md-sm: clamp(0.8rem, 1vw, 0.9rem);
+  --font-size-md: 1rem;
+
+    --font-size-lg: clamp(1.25rem, 2vw, 1.25rem);
+    --font-size-xl: clamp(1.563rem, 2.2vw, 1.563rem); 
+    --font-size-2xl: clamp(1.953rem, 2.5vw, 1.953rem);
+    --font-size-3xl: clamp(2.441rem, 3vw, 2.441rem);  
+    --font-size-4xl: clamp(3.052rem, 3.5vw, 3.052rem);
+    --font-size-5xl: clamp(3.815rem, 4vw, 3.815rem);  
 
 
   --layout-max-width: clamp(60rem, 80vw, 75rem);
@@ -151,7 +160,7 @@ textarea:not([rows]) {
 
 body {
   font-family: var(--font-body);
-  font-size: var(--font-size);
+  font-size: var(--font-size-md);
   line-height: var(--line-height);
   font-weight: 400;
   color: var(--text-color);
@@ -160,41 +169,49 @@ body {
 
 h1 {
   font-family: var(--font-heading);
-  font-size: calc(var(--font-size) * 2.666);
-  line-height: calc(var(--line-hight) * 1.2);
   font-weight: 900;
+  font-size: var(--font-size-5xl);
 }
 
 h2 {
   font-family: var(--font-heading);
-  font-size: calc(var(--font-size) * 2);
-  line-height: calc(var(--line-height) * 1.15);
   font-weight: 800;
+  font-size: var(--font-size-4xl);
 }
 
 h3 {
   font-family: var(--font-heading);
-  font-size: calc(var(--font-size) * 1.5);
-  line-height: calc(var(--line-height) * 1.1);
   font-weight: 700;
+  font-size: var(--font-size-3xl);
 }
 
 h4 {
   font-family: var(--font-heading);
-  font-size: calc(var(--font-size) * 1.25);
-  line-height: calc(var(--line-height) * 1.05);
   font-weight: 600;
+  font-size: var(--font-size-2xl);
+}
+
+h5 {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: var(--font-size-xl);
+}
+
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: var(--font-size-lg);
 }
 
 p {
   font-family: var(--font-body);
-  font-size: var(--font-size);
+  font-size: var(--font-size-md);
   line-height: var(--line-height);
 }
 
 blockquote {
   font-family: var(--font-body-italic);
-  line-height: calc(var(--line-height) * 0.9);
+  font-size: var(--font-size-md);
 }
 
 a {
@@ -218,13 +235,12 @@ strong, b {
 }
 
 small {
-  font-size: calc(var(--font-size) * 0.8);
   font-weight: 300;
+  font-size: var(--font-size-sm);
 }
 
 .site-nav-list ul li a {
   display: block;
-  font-size: calc(var(--font-size) * 1.2);
   padding: var(--layout-padding);
   font-weight: 500;
 }
