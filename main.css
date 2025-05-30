@@ -488,6 +488,24 @@ section {
 }
 
 
+a[href^="http"]:not([href*="yourdomain.com"])::after {
+  content: '';
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  background-image: url('/img/external-link.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  vertical-align: middle;
+}
+
+a[href^="http"]:not([href*="tomasik.xyz"]) {
+  padding-right: 1em;
+  text-decoration: underline;
+}
+
+
 /* Exceptions */
 /* Media Queries */
 /* Desktop */
